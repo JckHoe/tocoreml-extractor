@@ -1,0 +1,19 @@
+[project]
+name = "llama-coreml-extractor"
+version = "0.1.0"
+description = "CoreML conversion and inference toolkit for Llama 3.2 1B models"
+requires-python = ">=3.12"
+dependencies = [
+    "coremltools>=8.0.0",
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "numpy>=1.21.0",
+    "safetensors>=0.3.0",
+]
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+dev-dependencies = []
