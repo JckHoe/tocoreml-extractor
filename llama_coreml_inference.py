@@ -80,9 +80,9 @@ def main():
     parser.add_argument("--model", default="llama_3_2_1b.mlpackage", help="CoreML model path")
     parser.add_argument("--tokenizer", default="tokenizer", help="Tokenizer path")
     parser.add_argument("--prompt", default="Hello there", help="Input prompt")
-    parser.add_argument("--max_tokens", type=int, default=50, help="Max tokens to generate")
-    parser.add_argument("--temperature", type=float, default=0.7, help="Sampling temperature")
-    parser.add_argument("--top_k", type=int, default=50, help="Top-k sampling")
+    parser.add_argument("--max_tokens", type=int, default=100, help="Max tokens to generate")
+    parser.add_argument("--temperature", type=float, default=0.2, help="Sampling temperature")
+    parser.add_argument("--top_k", type=int, default=30, help="Top-k sampling")
     
     args = parser.parse_args()
     
