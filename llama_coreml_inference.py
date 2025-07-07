@@ -79,7 +79,7 @@ def main():
     parser = argparse.ArgumentParser(description="Run inference with CoreML Llama 3.2 1B")
     parser.add_argument("--model", default="llama_3_2_1b.mlpackage", help="CoreML model path")
     parser.add_argument("--tokenizer", default="tokenizer", help="Tokenizer path")
-    parser.add_argument("--prompt", default="The future of AI is", help="Input prompt")
+    parser.add_argument("--prompt", default="Hello there", help="Input prompt")
     parser.add_argument("--max_tokens", type=int, default=50, help="Max tokens to generate")
     parser.add_argument("--temperature", type=float, default=0.7, help="Sampling temperature")
     parser.add_argument("--top_k", type=int, default=50, help="Top-k sampling")

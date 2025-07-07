@@ -38,15 +38,9 @@ def create_int4_quantized_model(model_name="meta-llama/Llama-3.2-1B", max_length
     print("Applying int4 quantization...")
     from coremltools.optimize.torch import quantization
     
-    quantizer = quantization.LinearQuantizer(
-        global_config=quantization.LinearQuantizerConfig(
-            quantization_scheme=quantization.ObserverType.min_max,
-            dtype=torch.qint8,  # CoreML will convert to int4 during conversion
-            mode=quantization.QuantizationMode.linear_quantization
-        )
-    )
+    quantizer = quantization.LinearQuantizer(wrapped_model)
     
-    wrapped_model = quantizer.prepare(wrapped_model, example_inputs=(dummy_input,))
+    wrapped_model = quantizer.prepare(example_inputs=(dummy_input,))
     
     # Calibration with more samples for better int4 accuracy
     print("Calibrating model...")
